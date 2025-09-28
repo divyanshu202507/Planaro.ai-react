@@ -1,0 +1,20 @@
+/* Container holding sidebar + content */
+.body {
+  display: flex;
+  height: 100vh;          /* Full viewport height */
+  width: 100vw;           /* Full viewport width */
+  overflow: hidden;       /* Prevent scroll caused by flex */
+  background-color: #000000; /* light background for content */
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar is fixed width, defined in Right.css as well */
+.content-area {
+  flex: 1;                /* Takes remaining width */
+  padding: 20px;
+  overflow-y: auto;       /* Scroll if content is taller than viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  border-left: 1px solid #ddd;
+}

@@ -1,0 +1,56 @@
+.heading1{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+select, input{
+    width: 210px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#formsubmit{
+    width: 250px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#formsubmit:hover{
+    background-color: #45a049;
+    transform: scale(1.01);
+}
+
+#formsubmit:active{
+    transform: scale(0.97);
+}
+
+input::placeholder{
+    color: grey;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+
+input{
+    height: 30px;
+    width: 200px;
+}
