@@ -2,7 +2,7 @@
 .body {
   display: flex;
   height: 100vh;          /* Full viewport height */
-  width: 100vw;           /* Full viewport width */
+  width: 100%;           /* Full viewport width */
   overflow: hidden;       /* Prevent scroll caused by flex */
   background-color: #000000; /* light background for content */
   font-family: Arial, sans-serif;

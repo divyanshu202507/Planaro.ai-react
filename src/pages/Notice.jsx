@@ -1,26 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Notice.css';
 
 const NoticeAdmin = () => {
   const [notices, setNotices] = useState([]);
   const [message, setMessage] = useState('');
+  const [editIndex, setEditIndex] = useState(null);
+
+  // Load notices from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem('notices');
+    if (stored) {
+      setNotices(JSON.parse(stored));
+    }
+  }, []);
+
+  // Save notices to localStorage on change
+  useEffect(() => {
+    localStorage.setItem('notices', JSON.stringify(notices));
+  }, [notices]);
 
   const handlePost = () => {
     const trimmed = message.trim();
     if (!trimmed) return;
 
-    const newNotice = {
-      message: trimmed,
-      timestamp: new Date().toLocaleString(),
-    };
+    if (editIndex !== null) {
+      // Editing existing notice
+      const updatedNotices = [...notices];
+      updatedNotices[editIndex].message = trimmed;
+      updatedNotices[editIndex].timestamp = new Date().toLocaleString();
+      setNotices(updatedNotices);
+      setEditIndex(null);
+    } else {
+      // Adding new notice
+      const newNotice = {
+        message: trimmed,
+        timestamp: new Date().toLocaleString(),
+      };
+      setNotices([newNotice, ...notices]);
+    }
 
-    setNotices([newNotice, ...notices]);
     setMessage('');
+  };
+
+  const cancelEdit = () => {
+    setEditIndex(null);
+    setMessage('');
+  };
+
+  const handleDelete = (index) => {
+    const updated = notices.filter((_, i) => i !== index);
+    setNotices(updated);
+    // Cancel edit mode if the deleted post was being edited
+    if (editIndex === index) {
+      cancelEdit();
+    }
   };
 
   return (
     <div className="admin-notice-container">
-      <h1>Post a Notice</h1>
+      <h1>{editIndex !== null ? 'Edit Notice' : 'Post a Notice'}</h1>
 
       <textarea
         value={message}
@@ -30,7 +68,18 @@ const NoticeAdmin = () => {
         className="notice-textarea"
       />
 
-      <button onClick={handlePost} className="post-button">Post</button>
+      <div className='update-cancel'>
+        <button onClick={handlePost} className="post-button">
+          {editIndex !== null ? 'Update' : 'Post'}
+        </button> {editIndex !== null && (
+          <button
+            onClick={cancelEdit}
+            className="post-button"
+            style={{ backgroundColor: '#6c757d', marginLeft: '10px' }} >
+            Cancel
+          </button>
+        )}
+      </div>
 
       <div className="notice-feed">
         <h2>Posted Notices</h2>
@@ -41,6 +90,18 @@ const NoticeAdmin = () => {
             <div key={index} className="notice-card">
               <p>{notice.message}</p>
               <span className="timestamp">{notice.timestamp}</span>
+              <div className='edit-delete' style={{ marginTop: '8px' }}>
+                <button
+                  onClick={() => {
+                    setMessage(notice.message);
+                    setEditIndex(index);
+                  }}
+                  className="edit-button"  >  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(index)}
+                  className="delete-button">  Delete  </button>
+              </div>
             </div>
           ))
         )}
