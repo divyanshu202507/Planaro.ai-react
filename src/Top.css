@@ -1,95 +1,52 @@
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: auto;
-
-    padding-top: 9px;
-    border-bottom: 1px solid white;
-    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-
-
-
-
-.button {
-    align-items: center;
-}
-
-h4 {
-    display: inline-block;
-    margin: 0px;
-    margin-right: 15px;
-
-
-
-}
-
-.right-section h3 {
-    display: inline-block;
-    padding-left: 5px;
-    padding-bottom: 7px;
-    margin-bottom: 10px;
-    padding-right: 5px;
-    font-size: 15px;
-}
-
-.logoutbtn {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    justify-content: center;
-    border: 2px;
-    margin-right: 10px;
-}
-
-.logout {
-    height: 25px;
-    width: 25px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-
-body {
-    margin: 0px;
-}
-
-h1 {
+header h1 {
     font-size: 45px;
-    font-weight: 900;
-    padding-left: 10px;
-    margin: 0px;
-    font-family: "SUSE Mono", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-   
-
+    color: #1e3a8a;
+    font-weight: 800;
 }
-
 
 .right-section {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    gap: 15px;
 }
 
-.logoutbtn:hover {
-    background-color: white;
-    opacity: 0.7;
-    border-radius: 15px;
-    color: black;
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-
+.right-section h4 {
+    margin: 0;
+    font-weight: 600;
 }
+
+.logoutbtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    height: 50px;
+    
+}
+
+
 
 .logoutbtn:active {
-    transform: scale(0.90);
-    transition: all 0.1s ease-in-out;
+    transform: scale(0.94);
+}
+
+.logout {
+    font-size: 18px;
 }

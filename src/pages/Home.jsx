@@ -25,10 +25,7 @@ const Home = () => {
                         <p className='room'>Room 101</p>
                         <p className='branch'>Micro. VLSI</p>
                     </div>
-                    <div className='optionstimetable'>
-                        <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                        <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                    </div>
+                 
                 </div>
 
                 <div id='2' className='infocls-wrapper'>
@@ -38,10 +35,7 @@ const Home = () => {
                         <p className='room'>Room 104 </p>
                         <p className='branch'>Robotics</p>
                     </div>
-                    <div className='optionstimetable'>
-                        <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                        <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                    </div>
+               
                 </div>
 
                 <div id='3' className='infocls-wrapper'>
@@ -51,10 +45,7 @@ const Home = () => {
                         <p className='room'>Room 108</p>
                         <p className='branch'>ECE</p>
                     </div>
-                    <div className='optionstimetable'>
-                        <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                        <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                    </div>
+                   
                 </div>
 
                 <div id='4' className='infocls-wrapper'>
@@ -64,10 +55,7 @@ const Home = () => {
                         <p className='room'>Room 107</p>
                         <p className='branch'>CSE</p>
                     </div>
-                    <div className='optionstimetable'>
-                        <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                        <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                    </div>
+               
                 </div>
 
                 <div id='5' className='infocls-wrapper'>
@@ -77,10 +65,7 @@ const Home = () => {
                         <p className='room'>Room 105</p>
                         <p className='branch'>Electrical Eng.</p>
                     </div>
-                    <div className='optionstimetable'>
-                        <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                        <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                    </div>
+                  
                 </div>
 
             </div>

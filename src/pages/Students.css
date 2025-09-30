@@ -1,19 +1,18 @@
-.heading1{
+.heading1 {
     text-align: center;
     margin-top: 20px;
-    font-size: 40px;
-    font-weight: 1000;
+    font-size: 36px;
+    font-weight: 800;
 }
 
-
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-select, input{
+select, input {
     width: 210px;
     height: 40px;
     margin: 10px;
@@ -22,35 +21,18 @@ select, input{
     padding: 5px;
 }
 
-#formsubmit{
+#formsubmit {
     width: 250px;
     height: 40px;
     margin-top: 20px;
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #2563eb;
     color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
-#formsubmit:hover{
-    background-color: #45a049;
-    transform: scale(1.01);
-}
-
-#formsubmit:active{
-    transform: scale(0.97);
-}
-
-input::placeholder{
-    color: grey;
-    font-size: 15px;
-    padding-left: 5px;
-}
-
-
-input{
-    height: 30px;
-    width: 200px;
+#formsubmit:hover {
+    background-color: #1d4ed8;
 }
