@@ -1,0 +1,78 @@
+.heading2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.classes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.infocls-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.infocls {
+    height: 20vh;
+    width: 12vw;
+    border: 2px solid paleturquoise;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.infocls:hover {
+    transform: scale(1.05);
+    border: 2px solid rgb(26, 112, 146);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide options by default */
+.optionstimetable {
+    display: none;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Show options when hovering over the wrapper */
+.infocls-wrapper:hover .options {
+    display: flex;
+}
+
+.optionstimetable button{
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #e0f7fa;
+    border: 1px solid #26a69a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.notifi{
+    padding-left: 30px;
+    font-size: 17px;
+}
+
+
+.noti1{
+    height: 6vh;
+    width: 70vw;
+    border: 2px solid paleturquoise;
+    margin: auto;
+    border-radius: 13px;
+    margin-bottom: 20px;
+    
+}

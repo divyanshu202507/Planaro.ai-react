@@ -1,65 +1,83 @@
-.heading2 {
-    font-size: 25px;
-    font-weight: 800;
-    margin-top: 10px;
-    margin-left: 5px;
+/* General dark theme */
+.page-container {
+  font-family: "Segoe UI", sans-serif;
+  background: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.classes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: auto;
-    align-items: flex-start;
-    gap: 20px;
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2rem;
 }
 
-.infocls-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+/* Home page options */
+.home-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
-.infocls {
-    height: 20vh;
-    width: 12vw;
-    border: 2px solid paleturquoise;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
+.option-card {
+  width: 80%;
+  background: #1f1f1f;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s;
 }
 
-.infocls:hover {
-    transform: scale(1.05);
-    border: 2px solid rgb(26, 112, 146);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.option-card:hover {
+  transform: scale(1.05);
+  background: #2a2a2a;
 }
 
-/* Hide options by default */
-.optionstimetable {
-    display: none;
-    margin-top: 10px;
-    flex-direction: column;
-    gap: 5px;
+/* View page */
+.view-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-/* Show options when hovering over the wrapper */
-.infocls-wrapper:hover .options {
-    display: flex;
+.timetable-content {
+  width: 80%;
+  background: #1f1f1f;
+  padding: 50px;
+  border-radius: 12px;
+  text-align: center;
 }
 
-.optionstimetable button{
-    padding: 5px 10px;
-    font-size: 12px;
-    background-color: #e0f7fa;
-    border: 1px solid #26a69a;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.empty-msg {
+  font-size: 1.2rem;
+  color: #aaaaaa;
 }
 
+/* Bottom actions */
+.bottom-actions {
+  display: flex;
+  gap: 20px;
+}
 
+.bottom-actions button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: #2563eb;
+  color: white;
+  transition: background 0.2s;
+}
 
+.bottom-actions button:hover {
+  background: #1d4ed8;
+}

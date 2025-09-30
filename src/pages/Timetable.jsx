@@ -1,35 +1,55 @@
-import React, { useState } from 'react';
-import './Timetable.css';
+import React, { useState } from "react";
+import "./Timetable.css";
 
 const Timetable = () => {
-    const [notices, setNotices] = useState([]);
+  const [page, setPage] = useState("home"); // "home" or "view"
 
-    const handleCancelClass = (id) => {
-        const message = `Class ${id} has been cancelled.`;
-        setNotices(prev => [...prev, message]);
-    };
+  return (
+    <div className="page-container">
+      {/* Header */}
+      <header className="header">
+        <h1>📅 Class Timetable Management</h1>
+      </header>
 
-    return (
-        <>
-            <h2 className='heading2'>My Today Classes</h2>
-            <br />
-            <div className='classes'>
-                {[1, 2, 3, 4, 5].map((num) => (
-                    <div key={num} className='infocls-wrapper'>
-                        <div className='infocls'>
-                            <p>Class {num}</p>
-                        </div>
-                        <div className='optionstimetable'>
-                            <button onClick={() => handleCancelClass(num)}>Cancel Class</button>
-                            <button onClick={() => alert(`Change timings for class ${num}`)}>Change Timings</button>
-                        </div>
-                    </div>
-                ))}
-            </div>
+      {page === "home" && (
+        <div className="home-options">
+          {/* This Week Timetable */}
+          <div
+            className="option-card"
+            onClick={() => setPage("view")}
+          >
+            <h2>This Week Timetable</h2>
+          </div>
 
-       
-        </>
-    );
+          {/* Create Timetable For Next Week */}
+          <div
+            className="option-card"
+            onClick={() => alert("Create timetable for next week clicked")}
+          >
+            <h2>Create Timetable For Next Week</h2>
+          </div>
+        </div>
+      )}
+
+      {page === "view" && (
+        <div className="view-page">
+          <div className="timetable-content">
+            <p className="empty-msg">No time is made for this week.</p>
+          </div>
+
+          {/* Bottom actions */}
+          <div className="bottom-actions">
+            <button onClick={() => alert("Cancel a class clicked")}>
+              ❌ Cancel a Class
+            </button>
+            <button onClick={() => alert("Reschedule a class clicked")}>
+              🔄 Reschedule a Class
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Timetable;
