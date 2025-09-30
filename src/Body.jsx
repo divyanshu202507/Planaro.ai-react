@@ -17,8 +17,8 @@ const Body = () => {
       
       <div className="content-area">
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
+          
+          <Route path="/" element={<Home />} />
           <Route path="/students" element={<Students />} />
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/notice" element={<Notice />} />
