@@ -8,6 +8,8 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+
+  base: '/Planaro.ai-react/',
 });
 
 
