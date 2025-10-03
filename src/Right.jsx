@@ -1,41 +1,35 @@
-import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
-
+import React from 'react';
+import { Link } from "react-router-dom";
 import { IoMdPerson } from "react-icons/io";
-import { FaTable } from "react-icons/fa";
+import { FaTable, FaUserClock } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { IoMdHome } from "react-icons/io";
 import { MdHomeWork } from "react-icons/md";
-import { FaUserClock } from "react-icons/fa";
-import './Right.css'
+import './Right.css';
 
 const Right = () => {
-
-  const linkStyle = {
-    textDecoration: 'none',
-    color: 'inherit',
-    padding: '0px',
-    display: 'block'
-  };
-
   return (
-    <>
-      <div className='right'>
-
-
-        <Link to="/home" style={linkStyle}><div id='div1' className='options'> <IoMdHome    className='icon'  /> Home </div></Link>
-        <Link to="/students" style={linkStyle}><div id='div2' className='options'><IoMdPerson  className='icon'  /> Students </div></Link>
-        <Link to="/timetable" style={linkStyle}><div id='div3' className='options'><FaTable  id='timeicon1' className='icon' />Time-Table  </div></Link>
-        <Link to="/notice" style={linkStyle}><div id='div4' className='options'><IoIosNotifications id='timeicon4'  className='icon' />Notice </div></Link>
-        <Link to="/attendance" style={linkStyle}><div id='div5' className='options'><FaUserClock id='timeicon2' className='icon'  />Attendance  </div></Link>
-        <Link to="/assignments" style={linkStyle}><div id='div6' className='options'><MdHomeWork id='timeicon3' className='icon'  />Assignments </div></Link>
-
-      </div>
-
-
-
-    </>
-  )
-}
+    <div className="sidebar">
+      <Link to="/web/home" className="option">
+        <IoMdHome className="icon" /> Home
+      </Link>
+      <Link to="/web/students" className="option">
+        <IoMdPerson className="icon" /> Students
+      </Link>
+      <Link to="/web/timetable" className="option">
+        <FaTable className="icon" /> Timetable
+      </Link>
+      <Link to="/web/notice" className="option">
+        <IoIosNotifications className="icon" /> Notices
+      </Link>
+      <Link to="/web/attendance" className="option">
+        <FaUserClock className="icon" /> Attendance
+      </Link>
+      <Link to="/web/assignments" className="option">
+        <MdHomeWork className="icon" /> Assignments
+      </Link>
+    </div>
+  );
+};
 
 export default Right;

@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";  // <-- import navigate
 import "./Login.css";
 
 const Login = () => {
   const [role, setRole] = useState("student");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();   // <-- create navigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Role: ${role}, Username: ${username}, Password: ${password}`);
+
+    // Dummy login check
+    if (username === "admin" && password === "divyanshu") {
+      // Redirect to Home inside Web layout
+      navigate("/web/home");
+    } else {
+      alert("Invalid username or password!");
+    }
   };
 
   return (
@@ -59,6 +68,6 @@ const Login = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Login;

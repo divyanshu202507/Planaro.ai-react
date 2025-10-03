@@ -1,16 +1,21 @@
-import Top from './Top.jsx';
-import Body from './Body.jsx';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./Login.jsx";
+import Web from "./Web.jsx";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+function App() {
+  return (
+    <Routes>
+      {/* Login page */}
+      <Route path="/" element={<Login />} />
 
+      {/* Authenticated app */}
+      <Route path="/web/*" element={<Web />} />
 
-
-function App() {  return (
-    <div className="App">
-      <Top />
-      <Body />
-    </div>
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 }
+
 export default App;
