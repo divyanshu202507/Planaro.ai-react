@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";  // <-- import navigate
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   const [role, setRole] = useState("student");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();   // <-- create navigate hook
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Dummy login check
     if (username === "admin" && password === "divyanshu") {
-      // Redirect to Home inside Web layout
       navigate("/web/home");
     } else {
       alert("Invalid username or password!");
@@ -21,25 +19,32 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-box" onSubmit={handleSubmit}>
-        <h2 className="login-title">Login</h2>
+    <div className="login-wrapper">
+      <form className="glass-box" onSubmit={handleSubmit}>
+        <div className="login-header">
+          <h2>Welcome To <span>Planora.ai</span></h2>
+          <p className="login-tagline">Your personalized academic planner</p>
+        </div>
+
+
 
         {/* Role Selection */}
         <div className="input-group">
-          <label>Select Role</label>
-          <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="admin">Admin</option>
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            required
+          >
             <option value="student">Student</option>
+            <option value="admin">Admin</option>
           </select>
         </div>
 
         {/* Username */}
         <div className="input-group">
-          <label>Username</label>
           <input
             type="text"
-            placeholder="Enter your username"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -48,21 +53,22 @@ const Login = () => {
 
         {/* Password */}
         <div className="input-group">
-          <label>Password</label>
           <input
             type="password"
-            placeholder="Enter your password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
 
-        {/* Forgot password */}
-        <p className="forgot-password">Forgot Password?</p>
+        <div className="options">
+          <a href="#" className="forgot-password">
+            Forgot Password?
+          </a>
+        </div>
 
-        {/* Login Button */}
-        <button type="submit" className="login-btn">
+        <button type="submit" className="login-button">
           Login
         </button>
       </form>

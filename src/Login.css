@@ -1,94 +1,157 @@
-/* Background */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Full-screen background with mountain image */
+.login-wrapper {
   height: 100vh;
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
-  font-family: "Poppins", sans-serif;
+  width: 100%;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Card Box */
-.login-box {
-  background: #fff;
-  padding: 35px 40px;
-  border-radius: 12px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-  width: 350px;
+/* Glassmorphic login box */
+.glass-box {
+  background: rgba(255, 255, 255, 0.4); /* translucent background */
+  backdrop-filter: blur(18px); /* strong blur */
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #1a1a1a;
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.login-box:hover {
-  transform: scale(1.03);
-}
-
-/* Title */
-.login-title {
-  font-size: 26px;
+/* Header */
+.login-header {
+  font-size: 30px;
   margin-bottom: 20px;
-  color: #333;
-  font-weight: 600;
+  margin-top: 0px;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
-/* Input Fields */
+.login-header h2{
+  margin-top: 0px;
+}
+
+/* Input group */
 .input-group {
+  margin-bottom: 22px;
   text-align: left;
-  margin-bottom: 18px;
-}
-
-.input-group label {
-  font-size: 14px;
-  font-weight: 500;
-  display: block;
-  margin-bottom: 6px;
-  color: #444;
 }
 
 .input-group input,
 .input-group select {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
   outline: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
+  transition: 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #333;
+  font-weight: 500;
 }
 
 .input-group input:focus,
 .input-group select:focus {
-  border-color: #74b9ff;
-  box-shadow: 0 0 8px rgba(116, 185, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Forgot Password */
+/* Options */
+.options {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
 .forgot-password {
-  font-size: 13px;
-  color: #2980b9;
-  margin: 8px 0 18px;
-  cursor: pointer;
-  transition: color 0.2s;
+  font-size: 14px;
+  color: #2c2c2c;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 .forgot-password:hover {
-  color: #e74c3c;
+  color: #000;
 }
 
 /* Button */
-.login-btn {
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
-  color: white;
-  border: none;
-  padding: 12px;
+.login-button {
   width: 100%;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.login-btn:hover {
-  background: linear-gradient(45deg, #2575fc, #6a11cb);
+.login-button:hover {
   transform: translateY(-2px);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .glass-box {
+    padding: 30px 25px;
+  }
+}
+
+
+/* Login Header Wrapper */
+.login-header {
+  margin-bottom: 25px;
+}
+
+.login-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.login-header h2 span {
+  color: #6a11cb; /* Accent color for "Planora.ai" */
+}
+
+/* Tagline */
+.login-tagline {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Glass box - stronger effect and more transparency */
+.glass-box {
+  background: rgba(255, 255, 255, 0.25); /* more transparent */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+ padding: 20px 35px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1a1a1a;
+  text-align: center;
 }
